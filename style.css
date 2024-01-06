@@ -81,10 +81,6 @@ button {
     cursor: pointer;
 }
 
-.info h3:hover .container {
-    border-right: 10px solid hsl(0, 0%, 7%);
-    border-bottom: 10px solid hsl(0, 0%, 7%);
-}
 
 .info cite {
     display:flex;
