@@ -17,32 +17,74 @@ html, body {
 }
 
 
-
 .container {
-    margin: 50px auto;
+    width: 100vw;
+    min-width:300px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    padding: 20px;
+}
+
+
+main {
     background-color: hsl(0, 0%, 100%);
-    
-    width: 330px;
-    padding: 20px 20px 30px;
+    width: auto;
     height: auto;
+
+
+
     border-radius: 20px;
     border: 1px solid hsl(0, 0%, 7%);
 
-    border-right: 5px solid;
-    border-bottom: 5px solid;
+    position: relative;
+    z-index: 10000;
+}
 
+#details {
+    padding: 15px;
+    display: block;
+    position: relative;
+    z-index: 10000;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: inherit;
+}
+
+
+#shadow {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+
+    background-color: hsl(0, 0%, 7%);
+}
+
+#shadow.active {
+    top: 15px;
+    left: 15px;
+    transform: all 0.3s ease-in-out;
 }
 
 
 
-
-#icon {
-    width: 290px;
+#icon  {
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
+
 .info {
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -52,6 +94,7 @@ button {
     border-radius: 5px;
     padding: 7px 18px;
     background-color: hsl(47, 88%, 63%);
+    color: hsl(0, 0%, 7%);
     margin-bottom: 20px;
     font-weight: 700;
 }
@@ -70,15 +113,30 @@ button {
     color: hsl(0, 0%, 50%);
     font-weight: 300;
     font-size: 15px;
+    text-wrap: nowrap;
 }
+
+
+ @media (max-width:350px) {
+    .info p:last-of-type {
+        font-size: 13px;
+    }
+}
+
 
 .info h3 {
     font-weight: 800;
+    text-wrap: nowrap;
 }
 
 .info h3:hover {
-    color: hsl(47, 88%, 63%);
+    /* color: hsl(47, 88%, 63%); */
     cursor: pointer;
+}
+
+#link.active {
+    color: hsl(47, 88%, 63%);
+    transform: all 0.3s ease-in-out;
 }
 
 
@@ -99,13 +157,4 @@ button {
 }
 
 
-@media (max-width:375px) {
 
-    .container {
-        width: 280px;
-    }
-
-    #icon {
-        width: 240px;
-    }
-}
