@@ -17,19 +17,23 @@
 </head>
 <body>
 
-
-  <div class="container-shadow"></div>
   <div class="container">
 
-    <img id="icon" src="./assets/images/illustration-article.svg" alt="illustration">
+    <main>
+      <section id="details">
+        <img id="icon" src="./assets/images/illustration-article.svg" alt="illustration">
+  
+        <section class="info">
+          <button> Learning </button>
+          <p> Published 21 Dec 2023 </p>
+          <h3 id="link"> HTML & CSS foundations </h3>
+          <p>  These languages are the backbone of every <br> website, defining structure, content, and <br> presentation. </p>
+          <cite> <img src="./assets/images/image-avatar.webp" alt="avater"> Greg Hooper </cite>
+        </section>
+      </section>
 
-    <section class="info">
-      <button> Learning </button>
-      <p> Published 21 Dec 2023 </p>
-      <h3> HTML & CSS foundations </h3>
-      <p>  These languages are the backbone of every website, defining structure, content, and presentation. </p>
-      <cite> <img src="./assets/images/image-avatar.webp" alt="avater"> Greg Hooper </cite>
-    </section>
+      <section id="shadow"></section>
+    </main>
 
   </div>
 
@@ -40,4 +44,25 @@
     Coded by <a href="#"> Abdul-Mujib</a>.
   </div>
 </body>
+
+<script>
+  const link = document.getElementById('link'),
+    shadow = document.getElementById('shadow')
+  ;
+
+  link.addEventListener('click', e => {
+    link.classList.toggle('active');
+
+    if(link.classList.contains('active')) {
+      shadow.classList.add('active');
+    } else {
+      shadow.classList.remove('active');
+    }
+  })
+
+
+
+
+
+</script>
 </html>
